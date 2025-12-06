@@ -1,78 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Elias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <header>
-        <ul class="navbar">
-            <li><a class="logo" href="default.asp">GE</a></li>
-            <li><a class="btn" href="#projects">Projects</a></li>
-            <li><a class="btn" href="#media">Media</a></li>
-            <li><a class="btn" href="contact.asp">Contact Me</a>
-            <div class="modal">
-                <div class="content">
-                    <div class="modal-header">
-                        
-                    </div>
-                 </div>
-            </div></li>
-            
-        </ul>
+        <nav class="navbar">
+            <a href="" class="logo">GE</a>
+            <ul class="nav-list">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><button id="openPopupBtn">Contact Me</button></li>
+                <div id="popupOverlay">
+  <div id="contactPopup">
+    <h2>Get in Touch</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+    <button id="closePopupBtn">X</button>
+  </div>
+
+            </ul>
+        </nav>
     </header>
     <main>
-        <div class="banner">
-            <h1>Welcome to My Personal Website</h1>
-        <section>
+        <div class="mid-section">
+            <section>
             <!-- Introduction Section -->
-             <img class="image" src="img/perfil.jpg" alt="Gabriel Elias" width="200" height="200">
-            <p>My name is Gabriel Elias, I'm a computer engineer student, that likes to make cool projects.</p>
-        </section>
+                <img class="image" src="img/perfil.jpg" alt="Gabriel Elias" width="200" height="200">
+                <p>My name is Gabriel Elias, I'm a computer engineer student that likes to make interesting projects.</p>
+            </section>
         </div> 
 
-        <section>
-            <!-- Projects Section -->
-            <h2 id="#projects">Projects</h2>
-            <div class="project">
-                <h3>Project 1: Personal Website</h3>
-                <p>A personal website to showcase my projects and skills.</p>
-                <a href="...index.html">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Project 2: Personal Website</h3>
-                <p>A personal website to showcase my projects and skills.</p>
-                <a href="...index.html">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Project 3: Personal Website</h3>
-                <p>A personal website to showcase my projects and skills.</p>
-                <a href="...index.html">View Project</a>
-            </div>
-            <ul>
-                <p>More projects coming soon...</p>
-            </ul>
-        </section>
+         <h2 id="#projects">My Projects</h2>
+            <section class="projects">
+                <!-- Projects Section -->
+                <div class="projects">
+                    <h3>Borrel</h3>
+                    <p>A project where I made my own version of git </p>
+                    <a href="...index.html">View Project</a>
+                    
+                </div>
+            </section>
 
-        <section>
-            <!-- Media Section -->
-            <h2 id="#media">Media</h2>
-            <div class="media-item">
-                <h3>My YouTube Channel</h3>
-                <p>Check out my YouTube channel wto know my thoughts</p>
-                <a href="hhttps://www.youtube.com/@elisios08">Visit Channel</a>
-            </div>
-            <div class="Twitter">
-                <h3>Twitter</h3>
-                <p>Read my blog for articles on programming, technology, and project updates.</p>
-                <a href="https://medium.com/">Visit Blog</a>
-            </div>
-        </section>
+         <h2 id="#media">Media</h2>
+
+            <section class="media">
+                <!-- Media Section -->
+                <div class="media-item">
+                    <h3>YouTube Channel</h3>
+                    <p>Check out my YouTube channel where I share tech tutorials and project walkthroughs.</p>
+                    <a href="https://www.youtube.com/@gabrielelias08">Visit Channel</a>
+            </section>
     </main>
     <footer>
         <p>&copy; 2025 Gabriel Elias. All rights reserved</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
