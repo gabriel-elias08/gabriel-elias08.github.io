@@ -18,11 +18,10 @@ popupOverlay.addEventListener('click', (event) => {
     popupOverlay.style.display = 'none';
   }
 });
-
 function sendEmail(event) {
   event.preventDefault(); // Prevent the default form submission
 
-  // Collect form data
+  // Get form values
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
@@ -31,20 +30,21 @@ function sendEmail(event) {
   const templateParams = {
     from_name: name,
     from_email: email,
-    message: message
+    message: message,
   };
-  
 
   // Send the email using EmailJS
   emailjs.send('service_yourserviceid', 'template_yourtemplateid', templateParams)
-    .then(function(response) {
-       alert('Email sent successfully!');
-       // Optionally, close the popup after sending the email
-       document.getElementById('popupOverlay').style.display = 'none';
-    }, function(error) {
-       alert('Failed to send email. Please try again later.');
+    .then((response) => {
+      console.log('Email sent successfully!', response.status, response.text);
+      alert('Your message has been sent successfully!');
+      // Close the popup after sending the email
+      popupOverlay.style.display = 'none';
+    }, (error) => {
+      console.error('Failed to send email.', error);
+      alert('There was an error sending your message. Please try again later.');
     });
 }
 
 // Attach the sendEmail function to the form submission
-document.getElementById('contactForm').addEventListener('submit', sendEmail);
+document.getElementById('contactForm').addEventListener('submit', sendEmail); 
