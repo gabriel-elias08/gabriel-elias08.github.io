@@ -1,3 +1,5 @@
+emailjs.init("ByX7YMI-nVmK6rrps"); //initialize EmailJS with your public key
+
 const openPopupBtn = document.getElementById('openPopupBtn');
 const closePopupBtn = document.getElementById('closePopupBtn');
 const popupOverlay = document.getElementById('popupOverlay');
@@ -32,9 +34,10 @@ function sendEmail(event) {
     from_email: email,
     message: message,
   };
-
+    const serviceID = 'service_4wk8bpc';
+    const templateID = 'template_q2ga19t';
   // Send the email using EmailJS
-  emailjs.send('service_yourserviceid', 'template_yourtemplateid', templateParams)
+  emailjs.send(serviceID, templateID, templateParams)
     .then((response) => {
       console.log('Email sent successfully!', response.status, response.text);
       alert('Your message has been sent successfully!');
