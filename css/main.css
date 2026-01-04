@@ -171,15 +171,42 @@ section.projects{
 div.projects {
   display: grid;
   grid-template-rows: subgrid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
   grid-auto-flow: row;
   grid-row: span 3;
-  gap: 0.3rem;
+  gap: 0.5rem;
+  max-width: auto;
+  max-height: auto;
   text-align: center;
   background-color: var(--primary-color);
-  padding: min(0.6rem, 2vh) min(1rem, 0.5vw);
   border-radius: 0.5rem;
   border: var(--secondary-color) 0.1rem solid;
-} 
+}
+@media screen and (max-width: 600px) {
+  section.projects {
+    grid-template-columns: repeat(auto);
+    padding: 2rem;
+  }
+  div.projects {
+    max-width: 100%;
+    max-height: auto;
+  }
+  
+}
+
+div.projects:hover {
+  border: var(--secondary-color) 0.2rem solid;
+}
+
+div.projects h3 {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+div.projects p {
+
+  padding: 0 0.5rem 1rem 0.5rem;
+  font-size: 1rem;
+}
 
 
 footer {
